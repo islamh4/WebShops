@@ -1,0 +1,8 @@
+﻿@model WebShops.Models.Recipient
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Спасибо за покупку!";
+}
+<h2>Спасибо за покупку @Html.Label(Model.Name)!</h2>
+<h5>Товары будут доставлены через 5 дней по адресу @Html.Label(Model.Address)</h5>
+

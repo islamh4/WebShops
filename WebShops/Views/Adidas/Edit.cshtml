@@ -1,0 +1,37 @@
+﻿@model WebShops.Models.Adidas
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Изменение объекта";
+}
+<h2>Вещь № @Model.AdidasId</h2>
+@Html.ValidationSummary(true, "")
+@using (Html.BeginForm("Edit", "Adidas", FormMethod.Post))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.AdidasId)
+        <p>
+            @Html.LabelFor(m => m.Name)
+            <br />
+            @Html.EditorFor(m => m.Name)
+            @Html.ValidationMessageFor(model => model.Name, "")
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Price)
+            <br />
+            @Html.EditorFor(m => m.Price)
+            @Html.ValidationMessageFor(model => model.Price, "")
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Foto)
+            <br />
+            <img src="@Html.DisplayFor(m => m.Foto)" width="200" height="200" />
+            <br />
+            <b>(Ссылка): </b>
+            @Html.EditorFor(model => model.Foto)
+            @Html.ValidationMessageFor(model => model.Foto, "")
+        </p>
+        <br />
+        <p><input type="submit" value="Изменить" /></p>
+        @Html.ActionLink("Список", "Index")
+    </fieldset>
+}

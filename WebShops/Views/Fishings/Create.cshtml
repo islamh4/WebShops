@@ -1,0 +1,30 @@
+﻿@model WebShops.Models.Fishing
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Добавление объекта";
+}
+<h2>Новая вещь рыбалки</h2>
+@Html.ValidationSummary(true, "")
+@using (Html.BeginForm("Create", "Fishings", FormMethod.Post))
+{
+    @Html.LabelFor(model => model.Name)
+    <br />
+    @Html.EditorFor(model => model.Name)
+    @Html.ValidationMessageFor(model => model.Name, "")
+    <br />
+    @Html.LabelFor(model => model.Price)
+    <br />
+    @Html.EditorFor(model => model.Price)
+    @Html.ValidationMessageFor(model => model.Price, "")
+    <br />
+    @Html.LabelFor(model => model.Foto)
+    <b>(Ссылка)</b>
+    <br />
+    @Html.EditorFor(model => model.Foto)
+    @Html.ValidationMessageFor(model => model.Foto, "")
+    <br />
+    <br />
+    <input type="submit" value="Добавить" />
+    <br />
+    @Html.ActionLink("Список", "Index")
+}

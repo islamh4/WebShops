@@ -1,0 +1,29 @@
+﻿@model WebShops.Models.Pyaterochka
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Детали объекта";
+}
+<h2>Вещь № @Model.PyaterochkaId</h2>
+@using (Html.BeginForm("Details", "Pyaterochkas"))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.PyaterochkaId)
+        <p>
+            @Html.LabelFor(m => m.Name)
+            <br />
+            @Html.DisplayFor(m => m.Name)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Price)
+            <br />
+            @Html.DisplayFor(m => m.Price)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Foto)
+            <br />
+            <img src="@Html.DisplayFor(m => m.Foto)" width="200" height="200" />
+        </p>
+        <br />
+        @Html.ActionLink("Список", "Index")
+    </fieldset>
+}

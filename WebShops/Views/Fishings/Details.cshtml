@@ -1,0 +1,30 @@
+﻿@model WebShops.Models.Fishing
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Детали объекта";
+}
+<h2>Вещь № @Model.FishingId</h2>
+@Html.ValidationSummary(true, "");
+@using (Html.BeginForm("Details", "Fishings"))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.FishingId)
+        <p>
+            @Html.LabelFor(m => m.Name)
+            <br />
+            @Html.DisplayFor(m => m.Name)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Price)
+            <br />
+            @Html.DisplayFor(m => m.Price)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Foto)
+            <br />
+            <img src="@Html.DisplayFor(m => m.Foto)" width="200" height="200" />
+        </p>
+        <br />
+        @Html.ActionLink("Список", "Index")
+    </fieldset>
+}

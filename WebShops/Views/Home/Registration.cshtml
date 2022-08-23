@@ -1,0 +1,37 @@
+﻿@model WebShops.Models.RegisterModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Регистрация";
+}
+<h3>Регитсрация в системе</h3>
+@Html.ValidationSummary(true, "")
+@using (Html.BeginForm("Registration", "Home", FormMethod.Post))
+{
+    @Html.LabelFor(model => model.Name)
+    <br />
+    @Html.EditorFor(model => model.Name)
+    @Html.ValidationMessageFor(model => model.Name, "")
+    <br />
+    @Html.LabelFor(model => model.Firstname)
+    <br />
+    @Html.EditorFor(model => model.Firstname)
+    @Html.ValidationMessageFor(model => model.Firstname, "")
+    <br />
+    @Html.LabelFor(model => model.Age)
+    <br />
+    @Html.EditorFor(model => model.Age)
+    @Html.ValidationMessageFor(model => model.Age, "")
+    <br />
+    @Html.LabelFor(model => model.RegistrLogin)
+    <br />
+    @Html.EditorFor(model => model.RegistrLogin)
+    @Html.ValidationMessageFor(model => model.RegistrLogin, "")
+    <br />
+    @Html.LabelFor(model => model.RegistrPassword)
+    <br />
+    @Html.EditorFor(model => model.RegistrPassword)
+    @Html.ValidationMessageFor(model => model.RegistrPassword, "")
+    <br />
+    <br />
+    <p><input type="submit" , value="Зарегистрироваться" /></p>
+}

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<WebShops.Models.Adidas>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Магазин Adidas";
+}
+@Html.ActionLink("Добавить", "Create", "Adidas")
+@using (Html.BeginForm())
+{
+    <table>
+        <thead>
+            <tr>
+                <td><p>Название</p></td>
+                <td><p>Цена</p></td>
+                <td><p>Фотография</p></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelitem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelitem => item.Price)</td>
+                    <td>
+                        <img src="@Html.DisplayFor(modelitem => item.Foto)" width="200" height="200" />
+                    </td>
+                    <td>
+                        @Html.ActionLink("Купить", "Buy", new {id = item.AdidasId})
+                        @Html.ActionLink("Изменить", "Edit", new { id = item.AdidasId })
+                        @Html.ActionLink("Детали", "Details", new { id = item.AdidasId })
+                        @Html.ActionLink("Удалить", "Delete", new { id = item.AdidasId })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
