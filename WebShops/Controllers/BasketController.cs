@@ -21,7 +21,6 @@ namespace WebShops.Controllers
         {
             return View();
         }
-        [Authorize]
         [HttpPost, ActionName("Arrange")]
         public ActionResult ArrangeGood(Recipient recipient)
         {
