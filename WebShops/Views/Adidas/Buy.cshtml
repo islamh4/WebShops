@@ -3,31 +3,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Покупка объекта";
 }
-<h2>Вещь № @Model.AdidasId</h2>
+<div class="BuyFont">
 @using (Html.BeginForm("Buy", "Adidas", FormMethod.Post))
 {
     <fieldset>
+        <h2>Вещь № @Model.AdidasId</h2>
         @Html.HiddenFor(m => m.AdidasId)
-        <p>
-            @Html.LabelFor(m => m.Name)
-            <br />
-            @Html.HiddenFor(m => m.Name)
-            @Html.DisplayFor(m => m.Name)
-        </p>
-        <p>
-            @Html.LabelFor(m => m.Price)
-            <br />
-            @Html.HiddenFor(m => m.Price)
-            @Html.DisplayFor(m => m.Price)
-        </p>
-        <p>
-            @Html.LabelFor(m => m.Foto)
-            <br />
-            @Html.HiddenFor(m => m.Foto)
-            <img src="@Html.DisplayFor(m => m.Foto)" width="200" height="200" />
-        </p>
+
+        <b class="backd">@Html.LabelFor(m => m.Name)</b>
         <br />
+        @Html.HiddenFor(m => m.Name)
+        @Html.DisplayFor(m => m.Name)
+        <br />
+        <b class="backd">@Html.LabelFor(m => m.Price)</b>
+        <br />
+        @Html.HiddenFor(m => m.Price)
+        @Html.DisplayFor(m => m.Price)
+        <br />
+        <b class="backd">@Html.LabelFor(m => m.Foto)</b>
+        <br />
+        @Html.HiddenFor(m => m.Foto)
+        <img src="@Html.DisplayFor(m => m.Foto)" width="200" height="200" />
+
         <p><input type="submit" value="В корзину" /></p>
         @Html.ActionLink("Список", "Index")
     </fieldset>
 }
+</div>

@@ -38,10 +38,11 @@ namespace WebShops.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create([Bind(Include = "HuntingId,Name,Price")] Hunting hunting)
+        public ActionResult Create([Bind(Include = "HuntingId,Name,Price,Foto")] Hunting hunting)
         {
             if (ModelState.IsValid)
             {
+                if (hunting.Foto == null) hunting.Foto = "https://el-sirius.ru/img/nophoto.png";
                 db.Huntings.Add(hunting);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -65,10 +66,11 @@ namespace WebShops.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "HuntingId,Name,Price")] Hunting hunting)
+        public ActionResult Edit([Bind(Include = "HuntingId,Name,Price,Foto")] Hunting hunting)
         {
             if (ModelState.IsValid)
             {
+                if (hunting.Foto == null) hunting.Foto = "https://el-sirius.ru/img/nophoto.png";
                 db.Entry(hunting).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

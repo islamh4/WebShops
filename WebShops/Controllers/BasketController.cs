@@ -8,6 +8,7 @@ using WebShops.Controllers;
 
 namespace WebShops.Controllers
 {
+    
     public class BasketController : Controller
     {
         private AcountContext db = new AcountContext();
@@ -20,19 +21,24 @@ namespace WebShops.Controllers
         {
             return View();
         }
+        [Authorize]
         [HttpPost, ActionName("Arrange")]
         public ActionResult ArrangeGood(Recipient recipient)
         {
-            recipient.DateTime = DateTime.Now;
-            db.Recipients.Add(recipient);
-            db.SaveChanges();
-            while(db.Baskets.FirstOrDefault() != null)
+            if (ModelState.IsValid)
             {
-                Basket basket = db.Baskets.FirstOrDefault();
-                db.Entry(basket).State = System.Data.Entity.EntityState.Deleted;
+                recipient.DateTime = DateTime.Now;
+                db.Recipients.Add(recipient);
                 db.SaveChanges();
+                while (db.Baskets.FirstOrDefault() != null)
+                {
+                    Basket basket = db.Baskets.FirstOrDefault();
+                    db.Entry(basket).State = System.Data.Entity.EntityState.Deleted;
+                    db.SaveChanges();
+                }
+                return View("ArrangeGood", recipient);
             }
-            return View("ArrangeGood",recipient);
+            return View("Arrange", recipient);
         }
         public ActionResult Delete(int id)
         {

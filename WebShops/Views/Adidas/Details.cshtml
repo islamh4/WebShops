@@ -3,27 +3,28 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Детали объекта";
 }
-<h2>Вещь № @Model.AdidasId</h2>
-@using (Html.BeginForm("Details", "Adidas"))
-{
-    <fieldset>
-        @Html.HiddenFor(m => m.AdidasId)
-        <p>
-            @Html.LabelFor(m => m.Name)
-            <br />
-            @Html.DisplayFor(m => m.Name)
-        </p>
-        <p>
-            @Html.LabelFor(m => m.Price)
-            <br />
-            @Html.DisplayFor(m => m.Price)
-        </p>
-        <p>
-            @Html.LabelFor(m => m.Foto)
-            <br />
-            <img src="@Html.DisplayFor(m => m.Foto)" width="200" height="200" />
-        </p>
-        <br />
-        @Html.ActionLink("Список", "Index")
-    </fieldset>
-}
+<div class="BuyFont">
+    @using (Html.BeginForm("Details", "Adidas"))
+    {
+        <fieldset>
+            <h2>Вещь № @Model.AdidasId</h2>
+            @Html.HiddenFor(m => m.AdidasId)
+            <p>
+                <b class="backd">@Html.LabelFor(m => m.Name)</b>
+                <br />
+                @Html.DisplayFor(m => m.Name)
+            </p>
+            <p>
+                <b class="backd">@Html.LabelFor(m => m.Price)</b>
+                <br />
+                @Html.DisplayFor(m => m.Price)
+            </p>
+            <p>
+                <b class="backd">@Html.LabelFor(m => m.Foto)</b>
+                <br />
+                <img src="@Html.DisplayFor(m => m.Foto)" width="200" height="200" />
+            </p>
+            @Html.ActionLink("Список", "Index")
+        </fieldset>
+    }
+</div>

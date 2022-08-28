@@ -16,7 +16,6 @@ namespace WebShops.Models
         [Required(ErrorMessage = "Поле должно быть заполнено!")]
         public int Price { get; set; }
         [Display(Name = "Фотография")]
-        [Required(ErrorMessage = "Поле должно быть заполнено!")]
-        public string Foto { get; set; }// = "https://el-sirius.ru/img/nophoto.png";
+        public string Foto { get; set; }
     }
 }

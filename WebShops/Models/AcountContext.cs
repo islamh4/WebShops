@@ -16,6 +16,7 @@ namespace WebShops.Models
         public DbSet<Pyaterochka> Pyaterochkas { get; set; }
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<Recipient> Recipients { get; set; }
+
     }
     public class DatabaseInitializer : DropCreateDatabaseAlways<AcountContext>
     {

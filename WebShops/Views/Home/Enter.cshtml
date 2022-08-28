@@ -3,20 +3,26 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Войти";
 }
-<h3>Вход в систему</h3>
-@using (Html.BeginForm("Enter", "Home"))
-{
-    @Html.LabelFor(model => model.Login)
-    <br />
-    @Html.EditorFor(model => model.Login)
-    @Html.ValidationMessageFor(model => model.Login, "")
-    <br />
-    @Html.LabelFor(model => model.Password)
-    <br />
-    @Html.EditorFor(model => model.Password)
-    @Html.ValidationMessageFor(model => model.Password, "")
-    <br />
-    <br />
-    <p><input type="submit" , value="Войти" /></p>
-    @Html.ActionLink("Регистрация", "Registration", "Home")
-}
+
+<div class="inner">
+    <h3 class="margin">Вход в систему</h3>
+    @using (Html.BeginForm("Enter", "Home", FormMethod.Post))
+    {
+        <div class="outter">
+            @Html.LabelFor(model => model.Login)
+            <br />
+            <b class="form-control">@Html.EditorFor(model => model.Login)</b>
+            <br />
+            <b class="Size">@Html.ValidationMessageFor(model => model.Login)</b>
+            <br />
+            @Html.LabelFor(model => model.Password)
+            <br />
+            <b class="form-control">@Html.EditorFor(model => model.Password)</b>
+            <br />
+            <b class="Size">@Html.ValidationMessageFor(model => model.Password)</b>
+            <br/>
+            <p><input type="submit" , value="Войти" /></p>
+            @Html.ActionLink("Регистрация", "Registration", "Home")
+        </div>
+    }
+</div>

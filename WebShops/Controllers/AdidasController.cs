@@ -9,6 +9,7 @@ using WebShops.Models;
 
 namespace WebShops.Controllers
 {
+    [Authorize]
     public class AdidasController : Controller
     {
         private AcountContext db = new AcountContext();
@@ -42,6 +43,7 @@ namespace WebShops.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (adidas.Foto == null) adidas.Foto = "https://el-sirius.ru/img/nophoto.png";
                 db.Adidases.Add(adidas);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -69,6 +71,7 @@ namespace WebShops.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (adidas.Foto == null) adidas.Foto = "https://el-sirius.ru/img/nophoto.png";
                 db.Entry(adidas).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -3,28 +3,29 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Удаление объекта";
 }
-<h2>Вещь № @Model.NikeId</h2>
-@using (Html.BeginForm("Delete", "Nikes", FormMethod.Post))
-{
-    <fieldset>
-        @Html.HiddenFor(m => m.NikeId)
-        <p>
-            @Html.LabelFor(m => m.Name)
-            <br />
-            @Html.DisplayFor(m => m.Name)
-        </p>
-        <p>
-            @Html.LabelFor(m => m.Price)
-            <br />
-            @Html.DisplayFor(m => m.Price)
-        </p>
-        <p>
-            @Html.LabelFor(m => m.Foto)
-            <br />
-            <img src="@Html.DisplayFor(m => m.Foto)" width="200" height="200" />
-        </p>
-        <br />
-        <p><input type="submit" value="Удалить" /></p>
-        @Html.ActionLink("Список", "Index")
-    </fieldset>
-}
+<div class="DeleteFont">
+    @using (Html.BeginForm("Delete", "Nikes", FormMethod.Post))
+    {
+        <fieldset>
+            <h2>Вещь № @Model.NikeId</h2>
+            @Html.HiddenFor(m => m.NikeId)
+            <p>
+                <b class="backd">@Html.LabelFor(m => m.Name)</b>
+                <br />
+                @Html.DisplayFor(m => m.Name)
+            </p>
+            <p>
+                <b class="backd">@Html.LabelFor(m => m.Price)</b>
+                <br />
+                @Html.DisplayFor(m => m.Price)
+            </p>
+            <p>
+                <b class="backd">@Html.LabelFor(m => m.Foto)</b>
+                <br />
+                <img src="@Html.DisplayFor(m => m.Foto)" width="200" height="200" />
+            </p>
+            <p><input type="submit" value="Удалить" /></p>
+            @Html.ActionLink("Список", "Index")
+        </fieldset>
+    }
+</div>

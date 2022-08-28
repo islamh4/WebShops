@@ -6,8 +6,11 @@
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
-    <nav>
+<body class="BGImg">
+    
+    <div class="nav navbar-inverse navbar-fixed-top ">
+    <div class="container">
+    <nav class="nav navbar-nav">
         <ul class="menu">
             <li>@Html.ActionLink("Главная", "Index", "Home")</li>
             <li>@Html.ActionLink("Рыбалка", "Index", "Fishings")</li>
@@ -20,6 +23,15 @@
             <li>@Html.ActionLink("Регистрация", "Registration", "Home")</li>
         </ul>
     </nav>
+</div>
+    </div>
+    
     @RenderBody()
 </body>
 </html>
+<style>
+    div {
+        margin: -4px;
+        color: beige;
+    }
+</style>

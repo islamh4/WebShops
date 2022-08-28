@@ -3,28 +3,33 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Добавление объекта";
 }
-<h2>Новая вещь Adidas</h2>
-@Html.ValidationSummary(true, "")
-@using (Html.BeginForm("Create", "Adidas", FormMethod.Post))
-{
-    @Html.LabelFor(model => model.Name)
-    <br />
-    @Html.EditorFor(model => model.Name)
-    @Html.ValidationMessageFor(model => model.Name, "")
-    <br />
-    @Html.LabelFor(model => model.Price)
-    <br />
-    @Html.EditorFor(model => model.Price)
-    @Html.ValidationMessageFor(model => model.Price, "")
-    <br />
-    @Html.LabelFor(model => model.Foto)
-    <b>(Ссылка)</b>
-    <br />
-    @Html.EditorFor(model => model.Foto)
-    @Html.ValidationMessageFor(model => model.Foto, "")
-    <br />
-    <br />
-    <input type="submit" value="Добавить" />
-    <br />
-    @Html.ActionLink("Список", "Index")
-}
+<div class="CreatFonts">
+    @using (Html.BeginForm("Create", "Adidas", FormMethod.Post))
+    {
+        <fieldset>
+            <h2 class="margin">Новая вещь Adidas</h2>
+            @Html.LabelFor(model => model.Name)
+            <br />
+            <b class="form-control">@Html.EditorFor(model => model.Name)</b>
+            <br />
+            <b class="Size">@Html.ValidationMessageFor(model => model.Name)</b>
+            <br />
+            @Html.LabelFor(model => model.Price)
+            <br />
+            <b class="form-control">@Html.EditorFor(model => model.Price)</b>
+            <br />
+            <b class="Size">@Html.ValidationMessageFor(model => model.Price)</b>
+            <br />
+            @Html.LabelFor(model => model.Foto)
+            <b>(Ссылка)</b>
+            <br />
+            <b class="form-control">@Html.EditorFor(model => model.Foto)</b>
+            <br />
+            <b class="Size">@Html.ValidationMessageFor(model => model.Foto)</b>
+            <br />
+            <input type="submit" value="Добавить" />
+            <br />
+            @Html.ActionLink("Список", "Index")
+        </fieldset>
+    }
+</div>

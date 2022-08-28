@@ -39,23 +39,23 @@ namespace WebShops.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Enter(LoginModel login)
+        public ActionResult Enter(LoginModel logins)
         {
             if (ModelState.IsValid)
             {
                 User user = null;
                 using (AcountContext db = new AcountContext())
                 {
-                    user = db.Users.FirstOrDefault(a => a.UserLogin == login.Login && a.UserPassword == login.Password);
+                    user = db.Users.FirstOrDefault(a => a.UserLogin == logins.Login && a.UserPassword == logins.Password);
                 }
                 if (user != null)
                 {
                     if (db.Baskets.Count() == 0) return Redirect("~/Home/Index");
-                    FormsAuthentication.SetAuthCookie(login.Login, true);
+                    FormsAuthentication.SetAuthCookie(logins.Login, true);
                     return Redirect("~/Basket/Index");
                 }
             }
-            return View(login);
+            return View(logins);
         }
         public ActionResult Registration()
         {

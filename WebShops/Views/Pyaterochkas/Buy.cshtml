@@ -3,31 +3,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Покупка объекта";
 }
-<h2>Вещь № @Model.PyaterochkaId</h2>
-@using (Html.BeginForm("Buy", "Pyaterochkas", FormMethod.Post))
-{
-    <fieldset>
-        @Html.HiddenFor(m => m.PyaterochkaId)
-        <p>
-            @Html.LabelFor(m => m.Name)
+<div class="BuyFont">
+    @using (Html.BeginForm("Buy", "Pyaterochkas", FormMethod.Post))
+    {
+        <fieldset>
+            <h2>Вещь № @Model.PyaterochkaId</h2>
+            @Html.HiddenFor(m => m.PyaterochkaId)
+
+            <b class="backd">@Html.LabelFor(m => m.Name)</b>
             <br />
             @Html.HiddenFor(m => m.Name)
             @Html.DisplayFor(m => m.Name)
-        </p>
-        <p>
-            @Html.LabelFor(m => m.Price)
+            <br />
+            <b class="backd">@Html.LabelFor(m => m.Price)</b>
             <br />
             @Html.HiddenFor(m => m.Price)
             @Html.DisplayFor(m => m.Price)
-        </p>
-        <p>
-            @Html.LabelFor(m => m.Foto)
+            <br />
+            <b class="backd">@Html.LabelFor(m => m.Foto)</b>
             <br />
             @Html.HiddenFor(m => m.Foto)
             <img src="@Html.DisplayFor(m => m.Foto)" width="200" height="200" />
-        </p>
-        <br />
-        <p><input type="submit" value="В корзину" /></p>
-        @Html.ActionLink("Список", "Index")
-    </fieldset>
-}
+
+            <p><input type="submit" value="В корзину" /></p>
+            @Html.ActionLink("Список", "Index")
+        </fieldset>
+    }
+</div>

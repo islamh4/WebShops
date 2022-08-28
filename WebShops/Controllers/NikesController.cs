@@ -38,10 +38,12 @@ namespace WebShops.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create([Bind(Include = "NikeId,Name,Price")] Nike nike)
+        public ActionResult Create([Bind(Include = "NikeId,Name,Price,Foto")] Nike nike)
         {
             if (ModelState.IsValid)
             {
+                if (nike.Foto == null)
+                    nike.Foto = "https://el-sirius.ru/img/nophoto.png";
                 db.Nikes.Add(nike);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -65,10 +67,12 @@ namespace WebShops.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "NikeId,Name,Price")] Nike nike)
+        public ActionResult Edit([Bind(Include = "NikeId,Name,Price,Foto")] Nike nike)
         {
             if (ModelState.IsValid)
             {
+                if (nike.Foto == null)
+                    nike.Foto = "https://el-sirius.ru/img/nophoto.png";
                 db.Entry(nike).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -38,10 +38,11 @@ namespace WebShops.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create([Bind(Include = "FishingId,Name,Price")] Fishing fishing)
+        public ActionResult Create([Bind(Include = "FishingId,Name,Price,Foto")] Fishing fishing)
         {
             if (ModelState.IsValid)
             {
+                if (fishing.Foto == null) fishing.Foto = "https://el-sirius.ru/img/nophoto.png";
                 db.Fishings.Add(fishing);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -65,10 +66,11 @@ namespace WebShops.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "FishingId,Name,Price")] Fishing fishing)
+        public ActionResult Edit([Bind(Include = "FishingId,Name,Price,Foto")] Fishing fishing)
         {
             if (ModelState.IsValid)
             {
+                if (fishing.Foto == null) fishing.Foto = "https://el-sirius.ru/img/nophoto.png";
                 db.Entry(fishing).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -3,35 +3,34 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Изменение объекта";
 }
-<h2>Вещь № @Model.FishingId</h2>
-@Html.ValidationSummary(true, "");
-@using (Html.BeginForm("Edit", "Fishings", FormMethod.Post))
-{
-    <fieldset>
+<div class="EditFont">
+    @using (Html.BeginForm("Edit", "Fishings", FormMethod.Post))
+    {
         @Html.HiddenFor(m => m.FishingId)
-        <p>
-            @Html.LabelFor(m => m.Name)
-            <br />
-            @Html.EditorFor(m => m.Name)
-            @Html.ValidationMessageFor(model => model.Name, "")
-        </p>
-        <p>
-            @Html.LabelFor(m => m.Price)
-            <br />
-            @Html.EditorFor(m => m.Price)
-            @Html.ValidationMessageFor(model => model.Price, "")
-        </p>
-        <p>
-            @Html.LabelFor(m => m.Foto)
-            <br />
-            <img src="@Html.DisplayFor(m => m.Foto)" width="200" height="200" />
-            <br />
-            <b>(Ссылка): </b>
-            @Html.EditorFor(model => model.Foto)
-            @Html.ValidationMessageFor(model => model.Foto, "")
-        </p>
+    <fieldset>
+        <h2>Вещь № @Model.FishingId</h2>
+        @Html.LabelFor(m => m.Name)
         <br />
+        <b class="form-control">@Html.EditorFor(m => m.Name)</b>
+        <br />
+        <b class="Size">@Html.ValidationMessageFor(model => model.Name)</b>
+        <br />
+        @Html.LabelFor(m => m.Price)
+        <br />
+        <b class="form-control">@Html.EditorFor(m => m.Price)</b>
+        <br />
+        <b class="Size">@Html.ValidationMessageFor(model => model.Price)</b>
+        <br />
+        @Html.LabelFor(m => m.Foto)
+        <br />
+        <img src="@Html.DisplayFor(m => m.Foto)" width="200" height="200" />
+        <br />
+        <b>(Ссылка): </b>
+        <b class="form-control">@Html.EditorFor(m => m.Foto)</b>
+        <br />
+        <b class="Size">@Html.ValidationMessageFor(model => model.Foto)</b>
         <p><input type="submit" value="Изменить" /></p>
         @Html.ActionLink("Список", "Index")
     </fieldset>
-}
+    }
+</div>

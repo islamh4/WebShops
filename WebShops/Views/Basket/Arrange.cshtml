@@ -3,36 +3,43 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Оформление заказа";
 }
-<h2>Получатель заказа</h2>
-@using (Html.BeginForm("Arrange", "Basket", FormMethod.Post))
-{
-    @Html.LabelFor(model => model.Name)
-    <br />
-    @Html.EditorFor(model => model.Name)
-    @Html.ValidationMessageFor(model => model.Name, "")
-    <br />
-    @Html.LabelFor(model => model.Firstname)
-    <br />
-    @Html.EditorFor(model => model.Firstname)
-    @Html.ValidationMessageFor(model => model.Firstname, "")
-    <br />
-    @Html.LabelFor(model => model.Number)
-    <br />
-    @Html.EditorFor(model => model.Number)
-    @Html.ValidationMessageFor(model => model.Number, "")
-    <br />
-    @Html.LabelFor(model => model.Email)
-    <br />
-    @Html.EditorFor(model => model.Email)
-    @Html.ValidationMessageFor(model => model.Email, "")
-    <br />
-    @Html.LabelFor(model => model.Address)
-    <br />
-    @Html.EditorFor(model => model.Address)
-    @Html.ValidationMessageFor(model => model.Address, "")
-    <br />
-    <br />
-    <input type="submit" value="Оформить" />
-    <br />
-    @Html.ActionLink("Корзина", "Index")
-}
+<div class="innerEnd">
+    <h2 class="margin">Получатель заказа</h2>
+    @using (Html.BeginForm("Arrange", "Basket", FormMethod.Post))
+    {
+        <div class="outter ">
+            @Html.LabelFor(model => model.Name)
+            <br />
+            <b class="form-control">@Html.EditorFor(model => model.Name)</b>
+            <br />
+            <b class="Size">@Html.ValidationMessageFor(model => model.Name)</b>
+            <br />
+            @Html.LabelFor(model => model.Firstname)
+            <br />
+            <b class="form-control">@Html.EditorFor(model => model.Firstname)</b>
+            <br />
+            <b class="Size">@Html.ValidationMessageFor(model => model.Firstname)</b>
+            <br />
+            @Html.LabelFor(model => model.Number)
+            <br />
+            <b class="form-control">@Html.EditorFor(model => model.Number)</b>
+            <br />
+            <b class="Size">@Html.ValidationMessageFor(model => model.Number)</b>
+            <br />
+            @Html.LabelFor(model => model.Email)
+            <br />
+            <b class="form-control">@Html.EditorFor(model => model.Email)</b>
+            <br />
+            <b class="Size">@Html.ValidationMessageFor(model => model.Email)</b>
+            <br />
+            @Html.LabelFor(model => model.Address)
+            <br />
+            <b class="form-control">@Html.EditorFor(model => model.Address)</b>
+            <br />
+            <b class="Size">@Html.ValidationMessageFor(model => model.Address)</b>
+            <br />
+            <p><input type="submit" value="Оформить" /></p>
+            @Html.ActionLink("Корзина", "Index")
+        </div>
+    }
+</div>

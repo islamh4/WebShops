@@ -1,33 +1,40 @@
 ﻿body {
-    font-size: 13px;
-    font-family: Verdana, Arial, Helvetica, Sans-Serif;
+    font-size: 25px;
+    font-family: Arial, Helvetica, Sans-Serif;
     background-color: #f7f7fa;
-    padding-left: 40px;
+    padding-left: 5px;
 }
 
 nav {
-    display: block;
+    display: ruby;
 }
 
 .menu {
-    padding-left: 10px;
+    padding-left: 50px;
+    text-align-last: center;
 }
+
 
     .menu ul {
         list-style: none;
     }
 
     .menu li {
+        font-size: 35px;
         display: inline;
+        text-shadow: 6px 5px 4px red;
+        padding-left: 25px;
+        padding-right: 25px;
     }
 
     .menu a:hover {
-        color: red;
+        color: green;
     }
 
 table {
     vertical-align: middle;
-    text-align: left;
+    text-align: center;
+    background-color: #6296d2;
 }
 
 .header {
@@ -36,8 +43,160 @@ table {
 
 td {
     padding-right: 10px;
+    color: white;
+    border: solid 3px green;
+    empty-cells: hide;
 }
 
 input {
-    width: 150px;
+    width: 170px;
+}
+.navbar-nav {
+    margin: 7px;
+    padding: 7px;
+    background-image: url(https://vsegda-pomnim.com/uploads/posts/2022-04/1649133312_18-vsegda-pomnim-com-p-priroda-krasivo-foto-19.jpg);
+    border-style: dotted;
+    border-color: green;
+}
+body.BGImg {
+    background-image: url(https://vsegda-pomnim.com/uploads/posts/2022-04/1649133312_18-vsegda-pomnim-com-p-priroda-krasivo-foto-19.jpg);
+}
+img.Padding{
+    padding-right:50px;
+}
+img.Paddings {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+a:hover{
+    color: blue;
+}
+div.inner {
+    width: 20%;
+    margin-left: 40%;
+    height: 342px;
+    background-color: #abb6c8
+}
+div.inner1 {
+    width: 20%;
+    margin-left: 40%;
+    height: 610px;
+    background-color: #abb6c8;
+}
+div.innerEnd {
+    width: 20%;
+    margin-left: 40%;
+    height: 640px;
+    background-color: #abb6c8;
+}
+div.outter {
+    margin-left: 25%;
+}
+
+h3.margin {
+    margin-left: 25%;
+}
+.form-control {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 15px;
+}
+.Size{
+    font-size: 15px;
+}
+.RegSixe{
+    font-size: 20px;
+    margin-left: 37%;
+}
+div.CreatFonts {
+    width: 22%;
+    margin-left: 5%;
+    height: 454px;
+    background-color: #abb6c8;
+}
+div.CreatFont {
+    width: 28%;
+    margin-left: 5%;
+    height: 456px;
+    background-color: #abb6c8;
+}
+div.CreatFish {
+    width: 22%;
+    margin-left: 5%;
+    height: 498px;
+    background-color: #abb6c8;
+}
+div.BuyFont {
+    width: 22%;
+    margin-left: 5%;
+    height: 590px;
+    background-color: #abb6c8;
+}
+div.HuntBuy{
+    width: 22%;
+    margin-left: 5%;
+    height: 622px;
+    background-color: #abb6c8;
+}
+div.HuntDelet {
+    width: 22%;
+    margin-left: 5%;
+    height: 672px;
+    background-color: #abb6c8;
+}
+div.HuntDetail {
+    width: 22%;
+    margin-left: 5%;
+    height: 617px;
+    background-color: #abb6c8;
+}
+.backd {
+    width: 20px;
+    height: 5px;
+    color: #a55848;
+}
+div.EditFont {
+    width: 22%;
+    margin-left: 5%;
+    height: 682px;
+    background-color: #abb6c8;
+}
+div.DeleteFont {
+    width: 22%;
+    margin-left: 5%;
+    height: 642px;
+    background-color: #abb6c8;
+}
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
 }
